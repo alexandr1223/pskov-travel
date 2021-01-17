@@ -1,0 +1,145 @@
+@font-face
+    font-family: "Mont-SemiBold"
+    src : url("../fonts/MontserratSemiBold.ttf")
+    font-display: swap
+
+@font-face
+    font-family: "Mont-Medium"
+    src : url("../fonts/MontserratMedium.otf")
+    font-display: swap
+
+
+*
+  font-family: Mont-SemiBold    
+
+$red: #F93737
+$grey: #BABABA
+
+input,
+button
+	outline: none
+
+ul
+	li
+		list-style: none
+
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none
+.container
+	width: 1200px
+	margin: 0 auto
+
+.title
+	font-size: 40px
+	font-family: "Mont-SemiBold"
+	text-align: center
+	margin-bottom: 15px
+	line-height: 120%
+	color: #ffffff
+.subtitle
+	text-align: center
+	color: #ffffff
+	font-size: 24px
+	margin-bottom: 15px
+	line-height: 130%
+
+.btn
+	font-size: 14px
+	background: $red
+	padding: 14px 28px
+	margin: 0 auto
+	cursor: pointer
+	border-radius: 8px
+	color: #ffffff
+	text-transform: uppercase
+	overflow: hidden
+	position: relative
+	border: none
+	z-index: 1
+	box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.2)
+	span
+		z-index: 20
+		display: block
+		line-height: 100%
+	&:after
+		background: #fff
+		content: ""
+		height: 155px
+		left: -75px
+		opacity: .2
+		position: absolute
+		top: -50px
+		transform: rotate(35deg)
+		transition: all 1s cubic-bezier(0.19, 1, 0.22, 1)
+		width: 50px
+		z-index: -10
+	&:hover  
+		&:after 
+			left: 120%
+			transition: all 2s cubic-bezier(0.19, 1, 0.22, 1)
+		
+
+.active-lang
+	background: rgba(64, 106, 255, 1) !important
+	color: #fff !important
+	a
+		color: #ffffff !important
+.blue
+	color: rgba(64, 106, 255, 1)
+
+body
+	position: relative
+
+.preloader 
+	/*фиксированное позиционирование*/
+	position: fixed
+	/* координаты положения */
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	/* фоновый цвет элемента */
+	background: #7287d4
+	/* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+	z-index: 1001
+
+.preloader__row 
+	position: relative
+	top: 45%
+	left: 50%
+	transform: translate(-52%, -50%)
+	text-align: center
+
+
+.preloader__item 
+	position: absolute
+	display: block
+	left: 50%
+	top: 50%
+	animation: preloader-pulse 2s infinite ease-in-out
+
+
+
+
+@keyframes preloader-pulse
+	0%
+	transform: scale(1)
+	50%
+	transform: scale(1.4)
+	100% 
+	transform: scale(1)
+
+  
+
+
+.loaded_hiding .preloader 
+	transition: 0.3s opacity
+	opacity: 0
+
+.loaded .preloader 
+	display: none
+
+.top-of-page
+	background: rgba(255,255,255, 1)

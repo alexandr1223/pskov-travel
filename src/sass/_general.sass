@@ -1,0 +1,285 @@
+$red: #F93737
+$grey: #BABABA
+
+.header 
+    background: url('../img/bg/send-img.jpg') center center/cover no-repeat
+    height: 100%
+
+.menu
+    background: rgba(0, 0, 0, .4)
+    padding: 18px 0
+    &__container
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__item
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        &--left
+            display: flex
+            flex-direction: row
+    &__text
+        display: flex
+        flex-direction: column
+        margin-left: 20px
+        span
+            color: #ffffff
+            font-size: 18px
+            padding: 18px 0 0 0
+    
+
+.call
+    font-size: 24px
+    color: #ffffff
+    display: block
+    padding: 6px 0
+    text-align: right
+    &__menu
+        margin-bottom: 6px
+
+.first
+    &__container
+    &__title
+        font-size: 60px
+        margin-top: 140px
+        line-height: 135%
+    &__subtitle
+        margin-top: 60px    
+        max-width: 600px
+        margin: 0 auto
+    &__btn
+        font-size: 18px
+        margin-top: 30px    
+        padding: 20px 40px
+        margin: 40px auto
+        display: block
+
+.discount
+    margin: 0 auto
+    margin-top: 100px
+    padding-bottom: 50px
+    &__item
+        height: 350px
+        width: 100%
+        margin: 0 20px
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            display: block
+            width: 300px
+            height: 350px
+            background: rgba(255, 255, 255, .5)
+            left: 20px
+            top: 20px
+    &__img
+        position: absolute
+
+    &__title
+        position: absolute
+        top: 50%
+        left: 42%
+        transform: translate(-50%, -50%)
+        width: 70%
+        text-align: center
+        color: #ffffff
+        line-height: 140%
+.slick-active
+    outline: none
+.slick-track
+    padding-bottom: 30px
+.slick-dots
+    display: flex
+    margin: 20px auto 0 
+    width: 160px
+    li
+        button
+            font-size: 0
+            background-color: transparent
+            border: none
+            border: 3px solid $red
+            display: inline-block
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            margin: 0 6px
+            &:hover
+                cursor: pointer
+            &:before
+                content: ""
+    .slick-active
+        button
+            background-color: $red
+                
+.send
+    padding: 80px 0 70px 0
+    &__form
+        display: flex
+        justify-content: space-around
+        width: 1000px
+        margin: 0 auto
+        margin-top: 50px
+    &__input   
+        display: block 
+        border-radius: 8px
+        border: none
+        padding: 16px 20px
+        font-size: 16px
+        width: 250px
+    &__btn
+        margin: 0
+    &__subtitle
+        margin-top: 50px
+        font-size: 22px
+    &__images
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        margin-top: 20px
+        a
+            display: block
+            overflow: hidden
+            &:hover
+                img
+                    transform: scale(1.03)
+        img
+            display: block
+            width: 100%
+            padding: 10px
+            transition: .3s linear
+
+.program
+    padding: 50px 0
+    &__container
+        display: flex
+        flex-direction: column
+        width: 1000px
+    &__title
+        color: #000000
+    &__block
+        display: flex
+        margin-top: 50px
+        justify-content: space-between
+    &__img
+        width: calc( 50% - 25px )
+    &__text
+        width: calc( 50% - 25px )
+        &--title
+            font-size: 24px
+            text-align: center
+            margin-bottom: 20px
+        p
+            margin-top: 10px
+            line-height: 130%
+            font-size: 16px
+    &__span
+        color: $red
+    
+.booking
+    padding: 60px 0
+    &__title
+        color: #000000
+    &__block
+        display: grid
+        margin-top: 60px
+        grid-template-columns: 250px 50px 250px 50px 250px 50px 250px
+        gap: 10px
+    &__arrow
+        margin-top: 200%
+    &__item
+        img
+            width: auto
+            height: 150px
+            display: block
+            margin: 0 auto
+        &--title
+            text-align: center
+            margin-top: 10px
+            margin-bottom: 16px
+            font-size: 22px
+    &__text
+        text-align: center
+        width: 90%
+        font-size: 14px
+        margin: 0 auto
+        color: rgba(0, 0, 0, .8)
+    &__btn
+        display: block
+        max-width: 250px
+        padding: 20px 0
+        margin-top: 60px
+        span
+            text-align: center
+
+.gallery
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-gap: 20px
+    a
+        display: block
+        img
+            width: 100%
+        
+.accordion
+    position: relative
+    margin: 50px 0
+    &__container
+        width: 1000px
+    &__title
+        color: #000
+        margin-bottom: 50px
+.set
+    position: relative
+    width: 100%
+    height: auto
+    &:last-child
+        .content
+            border-bottom: 1px solid #ddd
+            padding-bottom: 20px
+    a
+        display: block
+        padding: 30px 15px
+        font-size: 26px
+        text-decoration: none
+        color: #555
+        font-weight: 600
+        border-top: 1px solid #ddd
+        transition:all 0.2s linear
+        &:hover
+            svg
+                background: rgba(0, 0, 0, .1)
+                padding: 10px
+                width: 50px 
+                height: 50px
+                border-radius: 50%
+        .active
+            background-color:#3399cc
+            color: #fff
+            svg
+                color: #fff
+        svg
+            position: absolute
+            display: block
+            top: 16px
+            right: 20px
+            margin-top: 4px
+            padding: 10px
+            color: #666
+            width: 50px
+            height: 50px
+            transition: .3s linear
+            border-radius: 50%
+
+.content
+    position:relative
+    width: 100%
+    height: auto
+    background-color: #ffffff
+    display: none
+    p
+        padding: 10px 15px
+        margin: 0
+        font-size: 16px
+        color: #333
+.plus
+    transform: rotate(45deg)

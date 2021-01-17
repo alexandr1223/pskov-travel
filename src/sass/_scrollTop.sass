@@ -1,0 +1,53 @@
+.scrollTop
+    display: none
+    background: #000000
+    opacity: 0.6
+    position: fixed
+    width: 45px
+    height: 41px
+    right: 30px
+    bottom: 100px
+    cursor: pointer
+    transition: 0.5s ease
+    &:hover
+        transition: 0.5s ease
+        opacity: 1
+    &:before, &:after
+        content: ""
+        top: 0
+        left: 0
+        background-color: #766DCC
+        width: 45px
+        height: 41px
+        -webkit-border-radius: 100%
+        -moz-border-radius: 100%
+        -ms-border-radius: 100%
+        border-radius: 100%
+        -webkit-animation-fill-mode: both
+        -moz-animation-fill-mode: both
+        animation-fill-mode: both
+        position: absolute
+        opacity: 0
+    &:before
+        background-color: #736cad
+        -webkit-animation: clickMe 1.8s 333ms infinite ease-out
+        -moz-animation: clickMe 1.8s 333ms infinite ease-out
+        animation: clickMe 1.8s 333ms infinite ease-out
+    &:after
+        -webkit-animation: clickMe 1.8s 777ms infinite ease-out
+        -moz-animation: clickMe 1.8s 777ms infinite ease-out
+        animation: clickMe 1.8s 777ms infinite ease-out
+    i
+        display: block
+        color: #ffffff
+        text-align: center
+        line-height: 43px
+        font-size: 1.3rem
+        height: 43px
+        z-index: 100
+        outline: none
+        text-decoration: none
+
+@media (max-width: 991px)
+    .scrollTop
+        right: 20px
