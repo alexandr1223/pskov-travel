@@ -28,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     lightGallery(document.querySelector('.lightgallery'));
     lightGallery(document.querySelector('.lightfirst'));
+    lightGallery(document.querySelector('.lightsecond'));
 
     $('img.img-svg').each(function(){
       var $img = $(this);
@@ -67,6 +68,27 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function modalShow(btn) {
+  document.querySelector(`${btn}`).addEventListener('click', () => {
+    console.log(document.querySelector('.modal'))
+    document.querySelector('.modal').classList.add('showModal')
+  })
+}
+
+modalShow('.booking__btn');
+modalShow('.program__btn');
+modalShow('.menu__btn');
+
+
+function modalHide() {
+  document.querySelector('.modal').addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal')) {
+      document.querySelector('.modal').classList.remove('showModal')
+    }
+  })
+}
+
+modalHide();
   // function hideImg() {
   //   if (window.location.href != "https://www.pracasofar.com.ua/" || window.location.href != "https://www.pracasofar.com.ua/thankyou") {
   //     document.querySelector('.header').style.cssText = "height: 100%"
@@ -193,68 +215,68 @@ window.addEventListener('DOMContentLoaded', () => {
   // }
   // modalClose('.modal-block__close', '.modal')
 
-// $(function(){
-//     $('input[name="phone"]').mask("99 999 9999");
-//   });
+$(function(){
+    $('input[name="phone"]').mask("99 999 9999");
+  });
 
-//   $(function(){
-//     var input = document.querySelectorAll('input[name="phone"]');
+  $(function(){
+    var input = document.querySelectorAll('input[name="phone"]');
     
 
-//     input.forEach(function(item) {
+    input.forEach(function(item) {
 
-//       errorMsg = document.querySelector("#error-msg"),
-//       validMsg = document.querySelector("#valid-msg");
+      errorMsg = document.querySelector("#error-msg"),
+      validMsg = document.querySelector("#valid-msg");
 
-//       var iti = window.intlTelInput(item, {
-//         onlyCountries: [ "ua", "al", "ad", "at", "by", "be", "ba", "bg", "hr", "cz", "dk",
-//   "ee", "fo", "fi", "fr", "de", "gi", "gr", "va", "hu", "is", "ie", "it", "lv",
-//   "li", "lt", "lu", "mk", "mt", "md", "mc", "me", "nl", "no", "pl", "pt", "ro",
-//   "ru", "sm", "rs", "sk", "si", "es", "se", "ch", "gb"],
-//       hiddenInput: "full_phone",
-//       initialCountry:"ua",
-//       autoHideDialCode: false,
-//       separateDialCode: true,
-//       preferredCountries: [ "ua", "by", "ru"]
-//       });
+      var iti = window.intlTelInput(item, {
+        onlyCountries: [ "ua", "al", "ad", "at", "by", "be", "ba", "bg", "hr", "cz", "dk",
+  "ee", "fo", "fi", "fr", "de", "gi", "gr", "va", "hu", "is", "ie", "it", "lv",
+  "li", "lt", "lu", "mk", "mt", "md", "mc", "me", "nl", "no", "pl", "pt", "ro",
+  "ru", "sm", "rs", "sk", "si", "es", "se", "ch", "gb"],
+      hiddenInput: "full_phone",
+      initialCountry:"ua",
+      autoHideDialCode: false,
+      separateDialCode: true,
+      preferredCountries: [ "ru", "by", "ua"]
+      });
       
-//       let str = document.querySelector('.iti__selected-flag').getAttribute("title");
-//         str = str.split("+");
-//         document.querySelector('input[name="input-hidden"]').value = str[1];
+      // let str = document.querySelector('.iti__selected-flag').getAttribute("title");
+      //   str = str.split("+");
+      //   document.querySelector('input[name="input-hidden"]').value = str[1];
       
-//       document.body.addEventListener('click', () => {
-//         let str = document.querySelector('.iti__selected-flag').getAttribute("title");
-//         str = str.split("+");
-//         document.querySelector('input[name="input-hidden"]').value = str[1];
-//       })
+      // document.body.addEventListener('click', () => {
+      //   let str = document.querySelector('.iti__selected-flag').getAttribute("title");
+      //   str = str.split("+");
+      //   document.querySelector('input[name="input-hidden"]').value = str[1];
+      // })
 
-//       // var reset = function() {
-//       //   input.classList.remove("error");
-//       //   errorMsg.innerHTML = "";
-//       //   errorMsg.classList.add("hide");
-//       //   validMsg.classList.add("hide");
-//       // };
+    //   var reset = function() {
+    //     input.classList.remove("error");
+    //     errorMsg.innerHTML = "";
+    //     errorMsg.classList.add("hide");
+    //     validMsg.classList.add("hide");
+    //   };
     
-//     // // on blur: validate
-//     // item.addEventListener('blur', function() {
-//     //   reset();
-//     //   if (input.value.trim()) {
-//     //     if (iti.isValidNumber()) {
-//     //       validMsg.classList.remove("hide");
-//     //     } else {
-//     //       input.classList.add("error");
-//     //       var errorCode = iti.getValidationError();
-//     //       errorMsg.innerHTML = errorMap[errorCode];
-//     //       errorMsg.classList.remove("hide");
-//     //     }
-//     //   }
-//     // });
-//     //   // on keyup / change flag: reset
-//     //   item.addEventListener('change', reset);
-//     //   item.addEventListener('keyup', reset);
+    // // on blur: validate
+    // item.addEventListener('blur', function() {
+    //   reset();
+    //   if (input.value.trim()) {
+    //     if (iti.isValidNumber()) {
+    //       validMsg.classList.remove("hide");
+    //     } else {
+    //       input.classList.add("error");
+    //       var errorCode = iti.getValidationError();
+    //       errorMsg.innerHTML = errorMap[errorCode];
+    //       errorMsg.classList.remove("hide");
+    //     }
+    //   }
+    // });
+    //   // on keyup / change flag: reset
+    //   item.addEventListener('change', reset);
+    //   item.addEventListener('keyup', reset);
 
-//     });
-//   })
+    });
+  })
   
 
 
