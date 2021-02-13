@@ -2,12 +2,15 @@ $red: #F93737
 $grey: #BABABA
 
 .header 
-    background: url('../img/bg/send-img2.jpg') center center/cover no-repeat
+    background: url('../img/first-new.jpg') center center/cover no-repeat
     height: 100%
 
 .menu
     background: rgba(0, 0, 0, .4)
     padding: 18px 0
+    &__logo
+        width: 80px
+        height: 80px
     &__container
         display: flex
         justify-content: space-between
@@ -26,7 +29,9 @@ $grey: #BABABA
         span
             color: #ffffff
             font-size: 18px
-            padding: 18px 0 0 0
+            padding: 12px 0 0 0
+            &:nth-child(1)
+                padding-top: 0
     
 
 .call
@@ -40,7 +45,7 @@ $grey: #BABABA
     &__footer
         align-items: center
         display: flex
-        font-size: 22px
+        font-size: 20px
         span
             margin-right: 10px
         svg
@@ -50,20 +55,33 @@ $grey: #BABABA
 .first
     &__container
     &__title
-        font-size: 60px
-        margin-top: 140px
+        font-size: 66px
+        margin-top: 80px
         line-height: 135%
     &__subtitle
         margin-top: 60px    
-        max-width: 600px
+        max-width: 900px
         margin: 0 auto
+        font-size: 16px
+        line-height: 140%
+        font-style: italic
     &__btn
         font-size: 18px
         margin-top: 30px    
         padding: 20px 40px
         margin: 40px auto
         display: block
-
+        a
+            color: #fff
+    &__list
+        max-width: 900px
+        color: #fff 
+        font-size: 22px
+        margin: 0 auto
+        text-align: center
+        li
+            padding: 6px 0
+            letter-spacing: 0.02em
 .discount
     margin: 0 auto
     margin-top: 100px
@@ -132,6 +150,9 @@ $grey: #BABABA
         width: 1000px
         margin: 0 auto
         margin-top: 50px
+    &__title
+        line-height: 150%
+        text-transform: uppercase
     &__input   
         display: block 
         border-radius: 8px
@@ -166,7 +187,8 @@ $grey: #BABABA
     padding: 80px 0 50px 0
     &__title
         color: #000000
-        width: 95%
+        width: 80%
+        margin: 0 auto
     &__subtitle
         color: rgba(0,0,0,0.6)
         width: 85%
@@ -187,9 +209,8 @@ $grey: #BABABA
             display: block
             width: 100%
             padding: 10px
-            height: fit-content
-            max-height: 200px
-            
+            max-height: 220px
+            object-fit: cover
             transition: .3s linear  
     &__text
         text-align: center
@@ -202,25 +223,49 @@ $grey: #BABABA
     &__container
         display: flex
         flex-direction: column
-        width: 1000px
     &__title
         color: #000000
     &__block
         display: flex
         margin-top: 50px
         justify-content: space-between
+        flex-direction: column
     &__img
-        width: calc( 50% - 25px )
+        height: 100%
+    &__right
+        display: grid
+        margin: 25px 0
+        grid-template-columns: 1fr 1fr 1fr
+        img
+            width: 100%
+            height: 330px
+            padding-right: 20px
+            object-fit: cover
+            &:last-child
+                padding-right: 0
+        &--second
+            grid-template-columns: 1fr 1fr
+            img
+                max-height: 450px
+            
+            
     &__text
-        width: calc( 50% - 25px )
+        width: 70%
         &--title
             font-size: 24px
-            text-align: center
             margin-bottom: 20px
+            text-transform: uppercase
+            &::after
+                content: ''
+                width: 70px
+                height: 4px
+                display: block
+                background: #F93737
+                margin-top: 6px
         p
             margin-top: 10px
-            line-height: 130%
-            font-size: 16px
+            line-height: 160%
+            font-size: 18px
     &__span
         color: $red
     &__btn
@@ -229,7 +274,22 @@ $grey: #BABABA
         padding: 20px 40px
     
 .price
-    padding: 70px 0 30px 0
+    padding: 70px 0 50px 0
+    &__col
+        display: flex
+        margin: 10px auto 0
+        width: 70%
+        justify-content: space-around
+        &--item
+            display: flex
+            align-items: center
+            span
+                display: block
+                font-size: 16px
+                margin-left: 4px
+            svg
+                width: 30px 
+                height: 30px
     &__title
         &--second
             margin-top: 40px
@@ -244,11 +304,65 @@ $grey: #BABABA
         span
             display: block
             margin: 10px 0
+    &__block
+        width: 80%
+        background: #fff
+        padding: 20px
+        border-radius: 6px
+        margin: 0 auto
+        &--subtitle
+            text-align: center
+    &__item
+        display: grid
+        grid-gap: 20px
+        width: max-content
+        margin: 0 auto
+        margin-top: 15px
+        margin-bottom: 30px
+        &--february
+            grid-template-columns: 250px 250px 250px
+        &--march
+            grid-template-columns: 250px 250px
+        &--april
+            grid-template-columns: 1fr 1fr 1fr 1fr
+        &--may
+            grid-template-columns: 1fr 1fr 1fr
+            &--second
+                width: 540px
+                margin: 0 auto
+                display: grid
+                grid-template-columns: 1fr 1fr
+        &--text
+            text-align: center
+            background: rgba(123, 199, 78, .7)
+            padding: 14px 10px
+            border-radius: 6px
+            max-width: 250px
+            height: max-content
+            span
+                display: block
+        &--group
+            margin-bottom: 6px
+        &--people
+            margin-top: 6px
+    .glass
+        display: block
+        width: 100%
+        height: 100%
+        background: rgba(255,255,255,.85)
+        background-size: cover
+        content: ' '
 
 .include
     padding: 70px 0
     &--second
         padding-bottom: 110px
+        padding-top: 10px
+        .include__block
+            grid-template-columns: 1fr 1fr
+            width: 750px
+            margin: 0 auto
+            margin-top: 50px
     &__title
         color: #000000
         text-transform: uppercase
@@ -295,8 +409,8 @@ $grey: #BABABA
         margin: 0 auto
     &__block
         display: grid
-        grid-template-columns: 1fr 1fr 1fr
-        grid-gap: 50px
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-gap: 40px
         margin-top: 50px
     &__image
         width: 200px
@@ -310,7 +424,7 @@ $grey: #BABABA
             font-size: 24px
             text-align: center
         &__text
-            font-size: 18px
+            font-size: 17px
             color: rgba(0, 0, 0, .8)
             text-align: center
             margin-top: 20px
@@ -325,8 +439,10 @@ $grey: #BABABA
         color: #000000
     &__block
         display: grid
+        margin: 0 auto
         margin-top: 60px
-        grid-template-columns: 250px 50px 250px 50px 250px 50px 250px
+        grid-template-columns: 300px 50px 300px 50px 300px
+        width: 1000px
         gap: 10px
     &__arrow
         margin-top: 200%
@@ -359,10 +475,34 @@ $grey: #BABABA
     display: grid
     grid-template-columns: 1fr 1fr 1fr 1fr
     grid-gap: 20px
+    &__title
+        color: #000
+        padding-top: 40px
+        padding-bottom: 20px
     a
         display: block
+        position: relative
         img
             width: 100%
+            height: 250px
+            display: block
+            object-fit: cover
+    &__hover
+        position: absolute
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, .4)
+        top: 0
+        left: 0
+    &__text
+        position: absolute
+        top: 50%
+        left: 50%
+        color: #ffffff
+        text-align: center
+        width: 70%
+        transform: translate(-50%, -50%)
+        line-height: 140%
         
 .accordion
     position: relative
@@ -379,7 +519,7 @@ $grey: #BABABA
     height: auto
     &:last-child
         .content
-            border-bottom: 1px solid #ddd
+            border-bottom: 1px solid #000
             padding-bottom: 20px
     a
         display: block
@@ -388,7 +528,7 @@ $grey: #BABABA
         text-decoration: none
         color: #555
         font-weight: 600
-        border-top: 1px solid #ddd
+        border-top: 1px solid #000
         transition:all 0.2s linear
         &:hover
             svg
@@ -419,13 +559,15 @@ $grey: #BABABA
     position:relative
     width: 100%
     height: auto
-    background-color: #ffffff
     display: none
     p
         padding: 10px 15px
         margin: 0
         font-size: 16px
         color: #333
+    &__break
+        display: block
+        margin-bottom: 8px
 .plus
     transform: rotate(45deg)
 
@@ -433,9 +575,12 @@ $grey: #BABABA
     margin-top: 60px
     background: rgba(0, 0, 0, .5)
     padding: 40px 0
+    .menu__item
+        align-items: flex-end
     &__item
         display: flex
         flex-direction: column
+        align-items: center !important
         a
             color: #ffffff
             margin-bottom: 20px
@@ -445,6 +590,9 @@ $grey: #BABABA
             color: #ffffff
             text-align: center
             font-size: 14px
+    .menu__logo
+        width: 110px 
+        height: 110px
 
 .modal
     position: fixed
@@ -460,13 +608,16 @@ $grey: #BABABA
     &__logo
         margin: 0 auto
         display: block
+        width: 160px
+        height: 160px
     &__block
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
         background: #ffffff
-        padding: 70px 50px
+        padding: 30px 50px
+        border-radius: 6px
     &__title
         color: #000000
         font-size: 28px

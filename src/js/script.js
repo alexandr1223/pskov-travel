@@ -18,7 +18,14 @@ window.addEventListener('DOMContentLoaded', () => {
       dots: true,
       responsive: [
         {
-          breakpoint: 768,
+          breakpoint: 989,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 479,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1
@@ -27,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
       ]
     });
     lightGallery(document.querySelector('.lightgallery'));
+    lightGallery(document.querySelector('.lightgallery1'));
     lightGallery(document.querySelector('.lightfirst'));
     lightGallery(document.querySelector('.lightsecond'));
 
@@ -234,7 +242,7 @@ $(function(){
   "li", "lt", "lu", "mk", "mt", "md", "mc", "me", "nl", "no", "pl", "pt", "ro",
   "ru", "sm", "rs", "sk", "si", "es", "se", "ch", "gb"],
       hiddenInput: "full_phone",
-      initialCountry:"ua",
+      initialCountry:"ru",
       autoHideDialCode: false,
       separateDialCode: true,
       preferredCountries: [ "ru", "by", "ua"]
