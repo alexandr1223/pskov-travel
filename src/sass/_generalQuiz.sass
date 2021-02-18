@@ -47,6 +47,7 @@
     align-items: center
     opacity: 0 
     visibility: hidden
+    z-index: 1000
     &:hover
         span
             display: block
@@ -118,6 +119,7 @@
     &__hi
         background: rgba(255, 255, 255, .9)
         transition: opacity 1s, left 2s, visibility 3s
+        min-height: 600px
     &__all
         right: -150%
         transition: opacity 1s, right 1.5s
