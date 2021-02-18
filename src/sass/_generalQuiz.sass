@@ -1,0 +1,486 @@
+.main
+    background: rgba(0,0,0,.7)
+    height: 100vh
+    width: 100%
+    position: fixed
+    bottom: 0
+    visibility: hidden
+    opacity: 0
+    transition: .5s
+    z-index: 1000
+    &-header
+        width: 100%
+        height: 80px
+        background: #3F282F
+        box-shadow: 0px 12px 10px -16px rgba(0,0,0,0.75)
+        display: flex
+        padding: 20px 200px
+        justify-content: space-between
+        align-items: center
+        &__contact
+            display: flex
+            flex-direction: column
+            justify-content: end
+            a
+                color: #fff
+                font-size: 20px
+                font-weight: 600
+                &:hover
+                    color: #fff
+                    text-decoration: none
+            span
+                text-align: right
+                color: #ffffff
+        &__text
+            font-size: 24px
+            color: #fff
+.quizBtnOpen
+    position: fixed
+    right: 40px
+    bottom: 40px
+    width: 80px
+    height: 80px
+    background: linear-gradient(to right, rgba(0,0,0,0.796078), #757575)
+    border-radius: 50px
+    cursor: pointer
+    display: flex
+    align-items: center
+    opacity: 0 
+    visibility: hidden
+    &:hover
+        span
+            display: block
+    span
+        display: none
+        right: 110%
+        position: absolute
+        width: max-content
+        background: #fff
+        padding: 6px 12px
+        border-radius: 6px
+        font-size: 18px
+    svg
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 40px
+        height: 40px
+    
+
+.quizHide
+    visibility: hidden !important
+    opacity: 0 !important
+.bonus
+    width: 100%
+    margin: 0 auto
+    margin-top: 50px
+    &__block
+        display: flex
+        justify-content: space-around
+    &__title
+        font-size: 18px
+        font-style: italic
+        text-align: center
+        margin-bottom: 20px
+    &__item
+        width: 270px
+        display: grid
+        background: linear-gradient(to right, #000000cb, #757575)
+        align-items: center
+        padding: 12px 14px
+        border-radius: 6px
+        grid-template-columns: 1fr 3fr
+        svg
+            display: block
+            width: 50px
+            height: 50px
+            margin-right: 14px
+    &__text
+        color: #fff
+        line-height: 120%
+        text-align: left
+        font-size: 16px
+.content
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 10
+    width: 1170px
+    margin: 0 auto
+    display: flex
+    background: #fff
+    height: max-content
+    border-radius: 10px
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 14px
+    min-height: 745px
+    &__hi
+        background: rgba(255, 255, 255, .9)
+        transition: opacity 1s, left 2s, visibility 3s
+    &__all
+        right: -150%
+        transition: opacity 1s, right 1.5s
+        visibility: hidden
+        opacity: 0
+    &-left
+        width: 100%
+        position: relative
+        padding: 30px 30px 30px 30px
+        &__first-screen
+            width: 660px
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            h1
+                font-size: 32px
+                text-align: center
+        &__first-btn
+            border-radius: 10px
+            text-align: center
+            padding: 18px 20px
+            font-size: 18px
+            background: rgba(81, 185, 5, 1)
+            color: #ffffff
+            z-index: 1
+            overflow: hidden
+            position: relative
+            cursor: pointer
+            border: none
+            transition: .5s ease
+            width: 170px
+            margin: 0 auto
+            margin-top: 40px
+            height: auto
+            box-shadow: rgba(81, 185, 5, .4) 2px 8px 14px
+            span
+                z-index: 20
+                display: block
+                line-height: 100%
+            &:after
+                background: #fff
+                content: ""
+                height: 155px
+                left: -75px
+                opacity: .2
+                position: absolute
+                top: -50px
+                transform: rotate(35deg)
+                transition: all 1s cubic-bezier(0.19, 1, 0.22, 1)
+                width: 50px
+                z-index: -10
+            &:hover  
+                &:after 
+                    left: 120%
+                    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1)
+    &-right
+        width: 360px
+        padding: 30px 30px 30px 30px
+        background: #ebebeb
+        border-top-right-radius: 10px 
+        border-bottom-right-radius: 10px
+        position: relative
+        &__arrow
+            display: none
+        &__img
+            width: 90px
+            height: 90px
+            border-radius: 50px
+        &__block
+            display: flex
+        &__flex
+            display: flex
+            margin-left: 10px
+            flex-direction: column
+        &__title
+            font-size: 24px
+            font-weight: 500
+            text-align: end
+        &__subtitle
+            font-size: 16px
+            line-height: 20px
+            margin-top: 10px
+            text-align: end
+            font-weight: 500
+            color: rgba(0, 0, 0, .6)
+        &__text
+            font-weight: 400
+            font-size: 14px
+            text-align: left
+            margin-top: 24px
+            background: #fff
+            line-height: 140%
+            padding: 8px
+            width: 100%
+            position: relative
+            &::before
+                content: ''
+                top: -20px
+                position: absolute
+                left: 35px
+                border: 10px solid transparent
+                border-bottom: 10px solid #fff
+        &--bonus
+            margin-top: 100%
+            position: absolute
+            bottom: 20px
+            padding-right: 30px
+            width: auto
+            .bonus
+                &__title
+                    font-size: 14px
+                    margin-bottom: 10px
+                &__block    
+                    flex-direction: column
+                &__item
+                    width: 100%
+                    &:first-child
+                        margin-bottom: 10px
+                &__text
+                    font-size: 14px
+                    line-height: 120%
+
+            
+.content-quiz
+    transition: .5s ease-in-out
+    display: none
+    z-index: 1
+    width: 100%
+    opacity: 0
+    min-height: 270px
+    padding-right: 20px
+    max-height: 720px
+    overflow-y: scroll
+    margin-top: 20px
+    &::-webkit-scrollbar 
+        width: 3px
+        height: 3px
+        background-color: #dbdbdb
+    &::-webkit-scrollbar-thumb
+        border-radius: 4px
+        background-color: rgb(81, 185, 5)
+    &__progress
+        margin-bottom: 25px
+        margin-top: 10px
+        &--title
+            color: rgb(81, 185, 5)
+            font-weight: 500
+        &--block
+            margin-top: 6px
+            height: 6px
+            position: relative
+            background: #dbdbdb
+            border-radius: 6px
+            box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3)
+            border: 0px
+            opacity: .9
+    &__line
+        width: 0%
+        background-color: rgb(81, 185, 5)
+        display: block
+        height: 100%
+        border-radius: 6px
+        position: relative
+        overflow: hidden
+        transition: all .3s ease
+        &::after
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 0, transparent 50%, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.2) 75%, transparent 0, transparent)
+            z-index: 1
+            background-size: 20px 20px
+            -webkit-animation: move 1.5s linear infinite
+            animation: move 1.5s linear infinite
+            border-radius: 6px
+            overflow: hidden
+    &__title
+        font-size: 24px
+        line-height: 130%
+        font-weight: 500
+        transition: .4s 
+        span
+            font-size: 20px
+            color: #E95A10
+    &__subtitle
+        font-size: 22px
+        line-height: 34px
+        margin-top: 10px
+        span
+            font-size: 20px
+            color: #E95A10
+    &__first
+        display: block
+        z-index: 10
+        opacity: 1
+    &__options
+        display: flex
+        justify-content: space-between
+    &__block
+        display: grid
+        grid-template-columns: 350px 350px
+        grid-gap: 20px
+    &__item
+        font-size: 20px
+        border: 2px solid #cacaca
+        transition: .3s ease
+        min-width: 250px
+        box-shadow: rgba(0, 0, 0, .1) 2px 2px 10px 1px
+        border-radius: 8px
+        display: flex
+        flex-direction: column
+        &:hover
+            border: 2px solid rgba(81, 185, 5, 1)
+            cursor: pointer
+        span
+            color: #69748c
+            min-height: 50px
+            padding: 10px 10px 10px 16px
+            font-size: 16px
+            display: flex
+            align-items: center
+            font-weight: 500
+        img
+            width: 100%
+            height: 180px
+            border-top-left-radius: 6px
+            border-top-right-radius: 6px
+            object-fit: cover
+    &__navigation
+        display: flex
+        justify-content: space-between
+        width: max-content
+        position: relative
+        width: 100%
+        margin: 20px 0 0 0
+        border-top: 1px solid #dbdbdb
+        padding-top: 20px
+    &__next
+        border-radius: 10px
+        text-align: center
+        padding: 18px 20px
+        font-size: 18px
+        background:  rgba(81, 185, 5, .4)
+        color: #ffffff
+        z-index: 1
+        overflow: hidden
+        position: relative
+        cursor: default
+        border: none
+        transition: .5s ease
+        width: 170px
+        height: auto
+        box-shadow: rgba(81, 185, 5, .4) 2px 8px 14px
+        span
+            z-index: 20
+            display: block
+            line-height: 100%
+        &:after
+            background: #fff
+            content: ""
+            height: 155px
+            left: -75px
+            opacity: .2
+            position: absolute
+            top: -50px
+            transform: rotate(35deg)
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1)
+            width: 50px
+            z-index: -10
+        
+    &__prev
+        background: #fff
+        border-radius: 10px
+        text-align: center
+        padding: 18px 20px
+        font-size: 18px
+        color: #ffffff
+        cursor: pointer
+        border: none
+        color: #000
+        transition: .5s ease
+        width: 170px
+        height: auto
+        box-shadow: rgba(0, 0, 0, 0.2) 2px 8px 14px
+        opacity: 0
+        visibility: hidden
+        height: auto
+        span
+            z-index: 20
+            display: block
+            line-height: 100%
+        &:hover
+            transform: translateY(-5px)
+            
+.form-send
+    transition: .5s ease-in-out
+    display: none
+    z-index: 1
+    width: 100%
+    opacity: 0
+    display: flex
+    flex-direction: column
+    display: none
+    margin-top: 150px
+    min-height: 370px
+    &__left
+        width: 700px
+        text-align: center
+        margin: 0 auto
+    &__right
+        width: 100%
+    &__title
+        margin-top: 50px
+        text-align: center
+        font-size: 28px
+    &__block
+        display: flex
+        flex-direction: column
+        width: 400px
+        margin: 0 auto
+        margin-top: 20px
+    &__subtitle
+        text-align: center
+        font-size: 24px
+        margin-top: 60px
+    &__input
+        border-radius: 6px
+        margin-top: 20px
+        padding: 14px 20px
+        font-size: 18px
+        outline: none
+        border: 1px solid #000
+    &__textarea
+        margin-top: 50px
+        padding: 14px 20px
+        font-size: 18px
+        outline: none
+        border-radius: 10px
+        height: 170px
+        border: 1px solid #000
+        resize: none
+    &__send
+        border-radius: 10px
+        text-align: center
+        padding: 14px 20px
+        font-size: 18px
+        background: rgba(81, 185, 5, 1)
+        color: #ffffff
+        cursor: pointer
+        border: none
+        transition: .5s ease
+        width: 170px
+        height: auto
+        margin: 0 auto
+        margin-top: 50px
+        box-shadow: rgba(81, 185, 5, .4) 2px 8px 14px
+        &:hover
+            transform: translateY(-5px)
+    .iti
+        margin-top: 20px
+        input
+            width: 100% !important
