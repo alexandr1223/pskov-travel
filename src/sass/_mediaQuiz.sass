@@ -14,8 +14,8 @@
                     font-size: 14px
 
     .content
-        width: 940px
-        min-height: 550px
+        width: 880px
+        min-height: 350px
         &-start
             width: 80%
             &__title
@@ -26,51 +26,72 @@
                 padding: 14px 36px
                 font-size: 14px
         &-left
-            margin-right: 30px
+            width: 100%
         &-right
-            &__text
-                font-size: 16px
             &__img
-                width: 70px 
-                height: 70px
+                width: 75px
+                height: 75px
             &__title
-                font-size: 18px
+                font-size: 20px
             &__subtitle
-                font-size: 12px
-                line-height: 18px
+                font-size: 15px
+            &__text
+                font-size: 13px
+                margin-top: 20px
+                &::before
+                    left: 25px
         &-quiz
             width: 100%
             height: max-content !important
             margin: 0 auto
             min-height: 220px
-            &__title
-                font-size: 24px
-            &__subtitle
-                font-size: 18px
+            overflow: hidden
             &__options
                 margin-top: 0
             &__block
+                grid-template-columns: 1fr 1fr
                 grid-gap: 20px
-                grid-template-columns: 370px 370px
             &__item
                 width: 100%
                 min-width: 50px
-                font-size: 15px
-                padding: 20px 20px
+                font-size: 16px
+                padding: 14px 20px
                 margin: 6px
+                max-width: 100%
                 height: max-content
                 display: flex
                 img
                     width: 0
                     display: none
-            &_navigation
-                width: 100%
-                margin: 0 auto
-                margin-top: 40px
+            &__block
+                grid-gap: 10px
+            &__item
+                img
+                    height: 140px
+                span
+                    font-size: 14px
+                    padding: 7px 7px 7px 16px
+            &__title
+                font-size: 20px
+            &__navigation
+                padding-top: 10px
+            &__progress
+                &--title
+                    font-size: 16px
             &__next,
             &__prev
-                font-size: 15px
-                padding: 16px 20px
+                width: 150px
+                font-size: 16px
+                padding: 15px 20px
+    .bonus
+        &__title
+            font-size: 12px !important
+        &__item
+            svg
+                width: 45px
+                height: 45px
+        &__text
+            font-size: 12px !important
     .form-send
         &__title
             font-size: 24px
@@ -212,6 +233,57 @@
             font-size: 14px
             padding: 12px 34px
             margin-top: 10px
+
+@media (max-width: 1600px) and (min-width: 1300px) 
+    .content
+        max-height: 650px
+        min-height: auto
+        width: 1000px
+        &-quiz
+            max-height: 400px
+            &__block
+                grid-gap: 10px
+            &__item
+                img
+                    height: 140px
+                span
+                    font-size: 14px
+                    padding: 7px 7px 7px 16px
+            &__title
+                font-size: 20px
+            &__navigation
+                padding-top: 10px
+            &__progress
+                &--title
+                    font-size: 16px
+            &__next,
+            &__prev
+                width: 150px
+                font-size: 16px
+                padding: 15px 20px
+        &-right
+            &__img
+                width: 75px
+                height: 75px
+            &__title
+                font-size: 20px
+            &__subtitle
+                font-size: 15px
+            &__text
+                font-size: 13px
+                margin-top: 20px
+                &::before
+                    left: 25px
+    .bonus
+        &__title
+            font-size: 12px !important
+        &__item
+            svg
+                width: 45px
+                height: 45px
+        &__text
+            font-size: 12px !important
+
 @media (max-width: 990px) 
     .main
         width: 100%

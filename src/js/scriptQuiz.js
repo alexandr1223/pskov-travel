@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
             function block() {
                 document.querySelector('.main').style.cssText = 'opacity: 1; visibility: visible; '
             }
-            setInterval(block, 20000)
+            setInterval(block, 2000)
         }
         
         document.querySelector('.main').addEventListener('click', event => {
